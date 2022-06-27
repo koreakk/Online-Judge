@@ -9,8 +9,10 @@ def solution(n: int) -> list[tuple[int, int]]:
 
         return answer
 
-    return [(i, m) for i, m in enumerate(map(lambda b: F(n, b), range(2, 11)), 2) \
-                if str(m) == str(m)[::-1]]
+    conversion = map(lambda b: (b, F(n, b)), range(2, 11))
+    palindrome = lambda x: str(x[1]) == str(x[1])[::-1]
+
+    return list(filter(palindrome, conversion))
     
 
 if __name__ == '__main__':
