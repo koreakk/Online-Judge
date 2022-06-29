@@ -16,7 +16,7 @@ if __name__ == '__main__':
     n = int(sys.stdin.readline())
     schedule = []
     for i in range(n):
-        time = (list(map(int, sys.stdin.readline().rstrip().split())))
+        time = list(map(int, sys.stdin.readline().rstrip().split()))
         schedule.append(time)
         
     print(solution(n, schedule))

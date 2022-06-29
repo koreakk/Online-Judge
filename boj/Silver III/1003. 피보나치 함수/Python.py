@@ -1,11 +1,11 @@
-def solution(n: int):
+def solution(n: int) -> tuple[int, int]:
     if n == 0:
         return (1, 0)
     if n == 1:
         return (0, 1)
 
     dp = [0] * n
-    def F(n: int) -> list[int]:
+    def F(n: int) -> int:
         if n <= 1:
             return 1
 
