@@ -7,7 +7,7 @@ def solution(board: list[list[int]]) -> None:
     dx = (-1, 1, 1, 0)
     dy = (1, 0, 1, 1)
 
-    def F(x: int, y: int) -> True:
+    def F(x: int, y: int) -> bool:
         if not board[x][y]:
             return False
         
