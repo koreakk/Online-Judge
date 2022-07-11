@@ -12,7 +12,7 @@ def rotated(side: list[list[str]], left: bool) -> list[list[str]]:
 
 
 def U(rotate: str):
-    if rotate == '+':
+    if rotated == '+': 
         w[:] = rotated(w, False)
         r[0], b[0], o[0], g[0] = \
             b[0], o[0], g[0], r[0]
@@ -24,7 +24,7 @@ def U(rotate: str):
 
 
 def D(rotate: str):
-    if rotate == '+':
+    if rotated == '+':
         y[:] = rotated(y, False)
         b[2], o[2], g[2], r[2] = \
             r[2], b[2], o[2], g[2]
@@ -101,7 +101,7 @@ def F(rotate: str):
 
 def B(rotate: str):
     if rotate == '+':
-        o[:] = rotated(o, False)
+        o[:] = rotated(o, True)
         y[2][0], y[2][2] = y[2][2], y[2][0]
         g[0][0], g[2][0] = g[2][0], g[0][0]
         for i in range(3):
@@ -112,7 +112,7 @@ def B(rotate: str):
         g[0][0], g[2][0] = g[2][0], g[0][0]
 
     else:
-        o[:] = rotated(o, True)
+        o[:] = rotated(o, False)
         y[2][0], y[2][2] = y[2][2], y[2][0]
         g[0][0], g[2][0] = g[2][0], g[0][0]
         for i in range(3):
@@ -139,4 +139,4 @@ for _ in range(T):
     for p, rotate in move_data:
         move_function[p](rotate)
 
-    print(*map(''.join, w), sep='\n')
+    print(*map(' '.join, w), sep='\n')
