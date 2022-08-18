@@ -10,7 +10,7 @@ class Solution:
         for char in s:
             if char not in table:
                 stack.append(char)
-            elif table[char] != stack.pop():
+            elif not stack or table[char] != stack.pop():
                 return False
             
         return len(stack) == 0
