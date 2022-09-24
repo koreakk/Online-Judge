@@ -1,5 +1,5 @@
 def solution(board: list[list[int]]) -> None:
-    def compare(x: int, y: int) -> bool:
+    def checkOutRange(x: int, y: int) -> bool:
         if x >= 19 or x < 0 or y >= 19 or y < 0:
             return False
         return True
@@ -16,17 +16,17 @@ def solution(board: list[list[int]]) -> None:
             # 예외 처리
             _x = x + (dx[i] * 4)
             _y = y + (dy[i] * 4)
-            if not compare(_x, _y):
+            if not checkOutRange(_x, _y):
                 continue
 
             # 육목 검사
             _x += dx[i]
             _y += dy[i]
-            if compare(_x, _y) and board[_x][_y] == color:
+            if checkOutRange(_x, _y) and board[_x][_y] == color:
                 continue
             _x = x - dx[i]
             _y = y - dy[i]
-            if compare(_x, _y) and board[_x][_y] == color:
+            if checkOutRange(_x, _y) and board[_x][_y] == color:
                 continue
             
             # 오목 검사
