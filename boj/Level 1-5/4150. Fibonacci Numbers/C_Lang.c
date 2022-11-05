@@ -2,20 +2,20 @@
 
 
 void add(int* x_ptr, int* x_len, int* y_ptr, int* y_len) {
-	int len = (*x_len > *y_len) ? *x_len : *y_len;
-	int sum = 0;
-	int carry = 0;
+    int len = (*x_len > *y_len) ? *x_len : *y_len;
+    int sum = 0;
+    int carry = 0;
 
-	for (int i = 0; i < len; i++) {
-		sum = x_ptr[i] + y_ptr[i] + carry;
+    for (int i = 0; i < len; i++) {
+        sum = x_ptr[i] + y_ptr[i] + carry;
 
-		x_ptr[i] = sum % 10;
-		carry = sum / 10;
-	}
-	if (carry)
-		x_ptr[len++] = carry;
+        x_ptr[i] = sum % 10;
+        carry = sum / 10;
+    }
+    if (carry)
+        x_ptr[len++] = carry;
 
-	*x_len = len;
+    *x_len = len;
 }
 
 void print(int* ptr, int len) {

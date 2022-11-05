@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
-	int* Result = (int*)malloc(sizeof(int) * (n + m));
+    int* Result = (int*)malloc(sizeof(int) * (n + m));
     int top = 0;
 
     int i = 0, j = 0;

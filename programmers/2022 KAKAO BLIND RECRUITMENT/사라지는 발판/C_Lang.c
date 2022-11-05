@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 // board_rows는 2차원 배열 board의 행 길이, board_cols는 2차원 배열 board의 열 길이입니다.
 // aloc_len은 배열 aloc의 길이입니다.
 // bloc_len은 배열 bloc의 길이입니다.

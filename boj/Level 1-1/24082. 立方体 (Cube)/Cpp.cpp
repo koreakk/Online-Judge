@@ -3,9 +3,9 @@ using namespace std;
 
 int main(void)
 {
-	int x;
-	cin >> x;
-	
-	cout << x * x * x << endl;
-	return 0;
+    int x;
+    cin >> x;
+    
+    cout << x * x * x << endl;
+    return 0;
 }

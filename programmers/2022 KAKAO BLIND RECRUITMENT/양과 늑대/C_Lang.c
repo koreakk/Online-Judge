@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
-
 // info_len은 배열 info의 길이입니다.
 // edges_rows는 2차원 배열 edges의 행 길이, edges_cols는 2차원 배열 edges의 열 길이입니다.
 int solution(int info[], size_t info_len, int **edges, size_t edges_rows, size_t edges_cols) {

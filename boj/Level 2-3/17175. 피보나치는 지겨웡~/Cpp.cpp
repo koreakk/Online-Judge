@@ -2,25 +2,25 @@
 using namespace std;
 
 long long solution(int n) {
-	const auto mod = 1000000007;
+    const auto mod = 1000000007;
 
-	long long Tmp = 0;
-	long long x = 1, y = 1;
+    long long Tmp = 0;
+    long long x = 1, y = 1;
 
-	for (int i = 0; i < n; ++i) {
-		Tmp = (x + y + 1) % mod;
-		x   = y;
-		y   = Tmp;
-	}
+    for (int i = 0; i < n; ++i) {
+        Tmp = (x + y + 1) % mod;
+        x   = y;
+        y   = Tmp;
+    }
 
-	return x;
+    return x;
 }
 
 int main(void)
 {
-	int n;
-	cin >> n;
+    int n;
+    cin >> n;
 
-	cout << solution(n) << endl;
-	return 0;
+    cout << solution(n) << endl;
+    return 0;
 }

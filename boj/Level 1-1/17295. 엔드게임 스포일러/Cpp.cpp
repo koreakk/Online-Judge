@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(void) {
-	cout << "Avengers: Endgame" << endl;
-	
-	return 0;
+    cout << "Avengers: Endgame" << endl;
+    
+    return 0;
 }

@@ -2,7 +2,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-
 int solution(int n) {
     const int base = 3;
 

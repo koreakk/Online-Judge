@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int score(int A, int scores[]) {
     int res = 0;
     for (int i = 0; i <= 10; i++) {
@@ -13,7 +12,6 @@ int score(int A, int scores[]) {
 
     return res;
 }
-
 
 bool compare(int A, int B) {
     for (int i = 0; i <= 10; i++) {
@@ -25,7 +23,6 @@ bool compare(int A, int B) {
     }
     return true;
 }
-
 
 // info_len은 배열 info의 길이입니다.
 int* solution(int n, int info[], size_t info_len) {

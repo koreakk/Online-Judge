@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 #define MAX(left, right) (((left) > (right)) ? (left) : (right))
-#define EXTRACT_BIT(n, loc, area)	(((n) >> (loc)) & (area))
-#define DX(block, idx)   EXTRACT_BIT((block), ((idx) << 2),	    0b11)
+#define EXTRACT_BIT(n, loc, area)      (((n) >> (loc)) & (area))
+#define DX(block, idx)   EXTRACT_BIT((block), ((idx) << 2),     0b11)
 #define DY(block, idx)   EXTRACT_BIT((block), ((idx) << 2) + 2, 0b11)
 
 typedef unsigned short block_t;

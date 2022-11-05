@@ -13,7 +13,7 @@ struct Matrix_2x2
         Matrix_2x2 result = {1, 0, 0, 1};
         Matrix_2x2 base   = *this;
         
-         for (; exponent > 0; exponent /= 2) {
+        for (; exponent > 0; exponent /= 2) {
             if (exponent % 2 != 0) {
                 result = base * result;
             }
