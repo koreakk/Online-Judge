@@ -15,7 +15,6 @@ int isPrime(size_t n)
 
 int solution(int n, int k)
 {
-
     size_t conv = 0;
     size_t mod = 0;
     size_t base = 1;
@@ -37,7 +36,6 @@ int solution(int n, int k)
         n = n / k;
     }
     answer += isPrime(conv);
-
 
     return answer;
 }
