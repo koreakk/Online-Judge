@@ -20,11 +20,11 @@ void solve() {
         cin >> info[i][0] >> info[i][1];
     }
 
-	for (int i = 1; i < N; ++i) {
-		for (int j = i - 1; j >= 0; --j) {
-			dp[i][j] = f(i, j);
-		}
-	}
+    for (int i = 1; i < N; ++i) {
+        for (int j = i - 1; j >= 0; --j) {
+            dp[i][j] = f(i, j);
+        }
+    }
 
     cout << dp[N - 1][0] << endl;
 }
