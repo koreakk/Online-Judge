@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, A[1000], dp[1000][2];
+int N, A[1000], dp[1000];
 
 void solve() {
     cin >> N;
@@ -11,17 +11,15 @@ void solve() {
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < i; ++j) {
             if (A[i] > A[j]) {
-                dp[i][0] = max(dp[i][0], dp[j][0] + 1);
-            }
-            else if (A[i] < A[j]) {
-                dp[i][1] = max(dp[i][1], max(dp[j][0], dp[j][1]) + 1);
+                dp[i] = max(dp[i], dp[j]);
             }
         }
+        dp[i] += A[i];
     }
 
     int result = 0;
     for (int i = 0; i < N; ++i) {
-        result = max(result, max(dp[i][0], dp[i][1]) + 1);
+        result = max(result, dp[i]);
     }
 
     cout << result << endl;
