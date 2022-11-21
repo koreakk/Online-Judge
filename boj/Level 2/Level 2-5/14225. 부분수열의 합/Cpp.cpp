@@ -30,7 +30,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    cout << fixed; cout.precision(16);
     solve();
     return 0;
 }

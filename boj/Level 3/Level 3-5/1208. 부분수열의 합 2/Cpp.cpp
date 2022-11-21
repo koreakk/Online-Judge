@@ -3,19 +3,13 @@ using namespace std;
 
 int N, T, A[40];
 
-vector<int> f(const int* begin, const int* end) {
-    int N = (int)(end - begin);
-    vector<int> ret(1ULL << N);
-
-    for (int i = 0, s = (int)ret.size(); i < s; ++i) {
-        for (int j = 0; j < N; ++j) {
-            if (i & (1 << j)) {
-                ret[i] += *(begin + j);
-            }
-        }
+void dfs(vector<int>& in, const int* begin, const int* end, int s = 0) {
+    if (begin >= end) {
+        in.push_back(s);
+        return;
     }
-
-    return ret;
+    dfs(in, begin + 1, end, s + *begin);
+    dfs(in, begin + 1, end, s);
 }
 
 void solve() {
@@ -24,9 +18,9 @@ void solve() {
         cin >> A[i];
     }
 
-    int mid = N / 2;
-    vector<int> lo = f(A,     A + mid);
-    vector<int> hi = f(A + mid, A + N);
+    int m = N / 2;
+    vector<int> lo; dfs(lo, A,     A + m);
+    vector<int> hi; dfs(hi, A + m, A + N);
 
     long long result = T == 0 ? -1 : 0;
     sort(hi.begin(), hi.end());
@@ -42,7 +36,6 @@ void solve() {
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    cout << fixed; cout.precision(16);
     solve();
     return 0;
 }
