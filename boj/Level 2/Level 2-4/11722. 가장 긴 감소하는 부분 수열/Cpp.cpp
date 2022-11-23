@@ -1,27 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, A[1000], dp[1000];
-
-void solve() {
-    cin >> N;
-    for (int i = 0; i < N; ++i)
-        cin >> A[i];
+int LIS(const vector<int>& A) {
+    int N = (int)A.size();
+    vector<int> dp(A.size(), 1);
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < i; ++j) {
-            if (A[i] < A[j]) {
-                dp[i] = max(dp[i], dp[j] + 1);
+            if (A[i] < A[j] && dp[i] < dp[j] + 1) {
+                dp[i] = dp[j] + 1;
             }
         }
     }
 
-    int result = 0;
+    int ret = 0;
     for (int i = 0; i < N; ++i) {
-        result = max(result, dp[i] + 1);
+        if (ret < dp[i]) {
+            ret = dp[i];
+        }
     }
 
-    cout << result << endl;
+    return ret;
+}
+
+void solve() {
+    int N;
+    cin >> N;
+
+    vector<int> A(N);
+    for (int& x : A) {
+        cin >> x;
+    }
+
+    cout << LIS(A) << endl;
 }
 
 int main() {

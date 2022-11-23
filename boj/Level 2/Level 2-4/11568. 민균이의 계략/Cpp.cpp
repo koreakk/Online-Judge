@@ -1,9 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int LIS(const vector<int>& A) {
-    int N = (int)A.size();
-    vector<int> dp(A.size(), 1);
+int N, A[2000], dp[2000];
+
+void solve() {
+    cin >> N;
+    for (int i = 0; i < N; ++i)
+        cin >> A[i];
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < i; ++j) {
@@ -15,24 +18,12 @@ int LIS(const vector<int>& A) {
 
     int ret = 0;
     for (int i = 0; i < N; ++i) {
-        if (ret < dp[i]) {
-            ret = dp[i];
+        if (ret < dp[i] + 1) {
+            ret = dp[i] + 1;
         }
     }
 
-    return ret;
-}
-
-void solve() {
-    int N;
-    cin >> N;
-
-    vector<int> A(N);
-    for (int& x : A) {
-        cin >> x;
-    }
-
-    cout << LIS(A) << endl;
+    cout << ret << endl;
 }
 
 int main() {

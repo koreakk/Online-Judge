@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int LIS(const vector<int>& A) {
+vector<int> LIS(const vector<int>& A) {
     int N = (int)A.size();
-    vector<int> dp(A.size(), 1);
+    vector<int> dp(N, 1);
 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < i; ++j) {
@@ -13,13 +13,21 @@ int LIS(const vector<int>& A) {
         }
     }
 
-    int ret = 0;
-    for (int i = 0; i < N; ++i) {
-        if (ret < dp[i]) {
-            ret = dp[i];
+    int i = 0;
+    for (int j = 0; j < N; ++j) {
+        if (i < dp[j]) {
+            i = dp[j];
         }
     }
 
+    vector<int> ret(i);
+
+    for (int j = N - 1; j >= 0; --j) {
+        if (dp[j] == i) {
+            ret[--i] = A[j];
+        }
+    }
+    
     return ret;
 }
 
@@ -32,7 +40,12 @@ void solve() {
         cin >> x;
     }
 
-    cout << LIS(A) << endl;
+    vector<int> ret = LIS(A);
+
+    cout << ret.size() << endl;
+    for (int x : ret) {
+        cout << x << ' ';
+    }
 }
 
 int main() {
