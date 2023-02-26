@@ -25,6 +25,6 @@ int main() {
         ret += (A[i]-B+C-1) / C;
     }
 
-   cout << ret << '\n';
-   return 0;
+    cout << ret << '\n';
+    return 0;
 }
