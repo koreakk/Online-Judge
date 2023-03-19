@@ -10,6 +10,10 @@ bool operator<=(const Point& left, const Point& right) {
     return left.x <= right.x;
 }
 
+bool operator==(const Point& left, const Point& right) {
+    return left.x == right.x && left.y == right.y;
+}
+
 int ccw(const Point& p1, const Point& p2, const Point& p3) {
     long long d = (p2.y - p1.y) * (p3.x - p2.x) - (p3.y - p2.y) * (p2.x - p1.x);
     return (d > 0) ? 1 : (d < 0) ? -1 : 0;
@@ -28,12 +32,12 @@ void solve() {
         if (s1 <= e2 && s2 <= e1) {
             cout << "1\n";
 
-            if (s1.x == e2.x) {
-                cout << s1.x << ' ' << s1.y << endl;
+            if (s1 == e2) {
+                cout << s1.x << ' ' << s1.y << '\n';
             }
-            else if (e1.x == s2.x) {
-                cout << e1.x << ' ' << e1.y << endl;
-            }
+            else if (s2 == e1) {
+                cout << s2.x << ' ' << s2.y << '\n';
+             }
         }
         else {
             cout << "0\n";
@@ -44,10 +48,10 @@ void solve() {
 
         if ((s1.x == e1.x || s2.x == e2.x) && (s1.y == e1.y || s2.y == e2.y)) {
             if (s1.x == e1.x) {
-                cout << s1.x << ' ' << s2.y << endl;
+                cout << s1.x << ' ' << s2.y << '\n';
             }
             else {
-                cout << s2.x << ' ' << s1.y << endl;
+                cout << s2.x << ' ' << s1.y << '\n';
             }
             return;
         }
@@ -69,7 +73,7 @@ void solve() {
         double B = (A * A1) + B1;
 
         if (isRotate) { swap(A, B); }
-        cout << A << ' ' << B << endl;
+        cout << A << ' ' << B << '\n';
     }
     else {
         cout << "0\n";
