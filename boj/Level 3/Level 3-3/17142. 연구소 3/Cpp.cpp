@@ -85,7 +85,7 @@ int bfs(const vector<pii>& info) {
     int ret = 0;
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
-            if (A[i][j] != 1 && V[i][j] == 0) {
+            if (A[i][j] == 0 && V[i][j] == 0) {
                 return INF;
             }
 
