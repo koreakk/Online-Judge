@@ -1,0 +1,1 @@
+print('NESW'[sum(int(input()) for _ in range(10)) % 4])
