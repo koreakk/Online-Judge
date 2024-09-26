@@ -24,8 +24,8 @@ ll fib(ll n, ll mod) {
 }
 
 int main(void) {
-    ll n;
-    std::cin >> n;
-    std::cout << fib((n&1 ? n : n+1), 1000000007) - 1;
+    ll n, m;
+    std::cin >> n >> m;
+    std::cout << fib(std::gcd(n, m), 1000000007);
     return 0;
 }
